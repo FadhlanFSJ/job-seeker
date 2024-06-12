@@ -11,9 +11,9 @@ import Register from './Pages/Register'
 const Layout = () => {
   return(
     <>
-    <Footer/>
-    <Outlet />
     <NavBar />
+    <Outlet />
+    <Footer/>
     </>
     
   )
@@ -21,7 +21,7 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <div>
+    <div className='w-[90%] m-auto bg-white'>
       <RouterProvider router={route}/>
     </div>
   )
