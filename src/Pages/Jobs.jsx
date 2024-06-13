@@ -8,7 +8,29 @@ const Jobs = () => {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('Python');
 
- const fetchData = async () => {
+  const fetchData = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://jsearch.p.rapidapi.com/search',
+      params: {
+        query: 'Python developer in Texas, USA',
+        page: '1',
+        num_pages: '1',
+        date_posted: 'all'
+      },
+      headers: {
+        'x-rapidapi-key': '922eb15679msh93596c8921e7d4bp1986c8jsn2740408908a5',
+        'x-rapidapi-host': 'jsearch.p.rapidapi.com'
+      }
+    };
+    
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+//  const fetchData = async () => {
   // const options = {
   //   method: 'GET',
   //   url: 'https://jsearch.p.rapidapi.com/search',
