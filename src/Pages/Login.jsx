@@ -26,7 +26,7 @@ const Login = () => {
     try{
       await login(formData);
       navigate('/jobs');
-      console.log(formData);
+      // console.log(formData);
     }catch(err){
       console.log(err)
     }

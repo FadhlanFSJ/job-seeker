@@ -7,30 +7,30 @@ const JobSingle = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);
 
-  useEffect(() => {
-    const fetchJob = async () => {
-      try {
-        const options = {
-          method: 'GET',
-          url: `https://jsearch.p.rapidapi.com/job/${id}`,
-          headers: {
-            'x-rapidapi-key': '48fc03c1e5msha01508206297ae8p177650jsna1c2ec037bb4',
-            'x-rapidapi-host': 'jsearch.p.rapidapi.com',
-          },
-        };
-        const res = await axios.request(options);
-        setJob(res.data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchJob = async () => {
+  //     try {
+  //       const options = {
+  //         method: 'GET',
+  //         url: `https://jsearch.p.rapidapi.com/job/${id}`,
+  //         headers: {
+  //           'x-rapidapi-key': '48fc03c1e5msha01508206297ae8p177650jsna1c2ec037bb4',
+  //           'x-rapidapi-host': 'jsearch.p.rapidapi.com',
+  //         },
+  //       };
+  //       const res = await axios.request(options);
+  //       setJob(res.data.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchJob();
-  }, [id]);
+  //   fetchJob();
+  // }, [id]);
 
-  if (!job) {
-    return <p>Loading...</p>;
-  }
+  // if (!job) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex justify-center">
