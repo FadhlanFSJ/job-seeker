@@ -19,6 +19,15 @@ const Layout = () => {
   );
 };
 
+
+const App = () => {
+  return (
+    <div className='w-[100%] m-auto bg-white'>
+      <RouterProvider router={route}/>
+    </div>
+  );
+};
+
 const route = createBrowserRouter([
   {
     path: "/",
@@ -40,15 +49,15 @@ const route = createBrowserRouter([
         path: "/jobs/:id",
         element: <JobSingle />,
       },
-      {
+    ]                    
+  },
+  {
         path: "/login",
         element: <Login />,
       },
       {
         path: "/register",
         element: <Register />,
-      },
-    ],
   },
 ]);
 
