@@ -20,8 +20,12 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <div className='w-[95%] m-auto bg-white'>
-      <RouterProvider router={route} />
+ registerNlogin
+    <div className='w-[100%] m-auto bg-blue'>
+
+    <div className='w-[100%] m-auto bg-blue'>
+ main
+      <RouterProvider router={route}/>
     </div>
   );
 };
