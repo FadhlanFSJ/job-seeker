@@ -37,6 +37,7 @@ const Search = ({ onSearch }) => {
                 className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' 
                 onClick={handleClear} // Menambahkan onClick handler untuk mengosongkan input
               />
+            )}
               <IoIosCloseCircleOutline className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' />
             </div>
             <button onClick={handleSubmit} type="submit" className='bg-[#2B8D93] p-5 px-10 rounded-[10px] text-white 

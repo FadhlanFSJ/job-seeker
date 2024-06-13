@@ -1,55 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-// Data dummy untuk tujuan desain
-const dummyData = [
-  {
-    id: 1,
-    employer_name: 'ABC Company',
-    job_title: 'Frontend Developer',
-    job_city: 'New York',
-    job_country: 'USA',
-    job_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac urna vitae augue venenatis finibus.',
-    job_apply_link: 'https://example.com/apply/1',
-  },
-  {
-    id: 2,
-    employer_name: 'XYZ Inc.',
-    job_title: 'Backend Developer',
-    job_city: 'San Francisco',
-    job_country: 'USA',
-    job_description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-    job_apply_link: 'https://example.com/apply/2',
-  },
-  {
-    id: 3,
-    employer_name: 'Tech Solutions Ltd.',
-    job_title: 'Full Stack Developer',
-    job_city: 'London',
-    job_country: 'UK',
-    job_description: 'Integer eu ante vel diam bibendum dictum. Nulla et elit nec libero auctor efficitur vitae eu tellus.',
-    job_apply_link: 'https://example.com/apply/3',
-  },
-];
+import api from '../API/api';
 
 const FavJobs = () => {
   const [favoriteJobs, setFavoriteJobs] = useState([]);
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
-    // Simulasi pengambilan data dari backend
-    setFavoriteJobs(dummyData);
+    const fetchData = async () => {
+      try {
+        const userIdFromStorage = localStorage.getItem('userId');
+        setUserId(userIdFromStorage);
+
+        if (userIdFromStorage) {
+          const response = await api.get(`/jobs/list/${userIdFromStorage}`);
+          setFavoriteJobs(response.data.Result);
+        }
+      } catch (error) {
+        console.log('Error fetching favorite jobs:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleDelete = async (id) => {
     try {
-      // Simulasi penghapusan dari state
+      // Panggil API untuk menghapus data dari backend
+      await api.delete(`/jobs/list/${id}`);
+      console.log(`Job with id ${id} deleted successfully.`);
+
+      // Update state favoriteJobs setelah penghapusan
       const updatedJobs = favoriteJobs.filter(job => job.id !== id);
       setFavoriteJobs(updatedJobs);
-      
-      // Simulasi penghapusan dari database dengan axios
-      // Gantikan dengan URL dan endpoint yang sesuai
-      await axios.delete(`http://localhost:8800/api/jobs/favorite/${id}`);
-      console.log(`Job with id ${id} deleted successfully.`);
     } catch (error) {
       console.error('Error deleting job:', error);
     }

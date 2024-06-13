@@ -52,21 +52,13 @@ const route = createBrowserRouter([
     ]                    
   },
   {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
-
-const App = () => {
-  return (
-    <div className='w-[100%] m-auto bg-blue'>
-      <RouterProvider router={route} />
-    </div>
-  );
-};
 
 export default App;
