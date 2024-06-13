@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import listData from '../data.json'
+
 
 const Home = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-
-  const fetchJobData = async () => {
+  //const fetchJobData = async () => {
     // const options = {
     //   method: 'GET',
     //   url: 'https://jsearch.p.rapidapi.com/search',
@@ -29,13 +30,10 @@ const Home = () => {
     // } catch (error) {
     //   console.error(error);
     // }
-  };
 
   useEffect(() => {
     setData(listData.data.slice(0,3))
   })
-
-  const navigate = useNavigate();
 
   const truncateText = (text, length) => {
     return text.length > length ? text.substring(0, length) + '...' : text;
@@ -94,6 +92,11 @@ const Home = () => {
       </div>
     </main>
   );
-};
+
+    
+  };
+
+  
+
 
 export default Home;
