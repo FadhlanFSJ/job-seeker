@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Search from '../Components/SearchDiv/Search';
-import axios from 'axios';
+import api from '../API/api';
 import { CiStar } from "react-icons/ci";
 import listData from '../data.json';
 
@@ -55,7 +55,8 @@ const Jobs = () => {
 
   const handleFavorite = async (job) => {
     try{
-      await axios.post('http://localhost:8800/api/jobs/', job);
+      console.log(job)
+      await api.post('http://localhost:8800/api/jobs/', job);
       alert('Job added to Favorite!');
     }catch(error){
       console.log(error);

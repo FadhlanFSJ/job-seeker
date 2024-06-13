@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { FaUser } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../auth/authContext';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +18,18 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    
+    try{
+      await login(formData);
+      navigate('/jobs');
+      console.log(formData);
+    }catch(err){
+      console.log(err)
+    }
   };
 
   return (

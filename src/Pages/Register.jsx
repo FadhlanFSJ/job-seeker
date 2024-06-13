@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { RiLockPasswordFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
     confirmPassword: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,10 +22,15 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    try{
+      await axios.post('http:localhost:8800/api/user/register', formData);
+      navigate("/login");
+    }catch(err){
+      console.log(err)
+    }
+    
   };
 
   return (
