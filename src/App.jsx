@@ -21,7 +21,7 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <div className='m-auto bg-white'>
+    <div className='w-[100%] m-auto bg-blue'>
       <RouterProvider router={route}/>
     </div>
   )
