@@ -19,20 +19,20 @@ const Search = ({ onSearch }) => {
   return (
     <div className='searchDiv grid gap-10 bg-greyIsh rounded-[10px] p-[3rem]'>
       <form>
-        <div className='firstDiv flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 shadow-lg shadow-greyIsh-700'>
+        <div className='firstDiv flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 h-[85%] shadow-lg shadow-greyIsh-700'>
             <div className='flex gap-2 items-center w-full'>
               <FaSearch className='text-[25px] icon'/>
               <input 
               type="text" 
-              className='bg-transparant text-blueColor focus:outline-none w-[100%]' 
+              className='bg-transparant text-[#2B8D93] focus:outline-none w-[100%]' 
               placeholder='Search...'
               value={query}
               onChange={handleInputChange}
               />
               <IoIosCloseCircleOutline className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' />
             </div>
-            <button onClick={handleSubmit} type="submit" className='bg-blueColor h-full p-5 px-10 rounded-[10px] text-white 
-            cursor-pointer hover:bg-blue-300'>
+            <button onClick={handleSubmit} type="submit" className='bg-[#2B8D93] p-5 px-10 rounded-[10px] text-white 
+            cursor-pointer hover:bg-white-300'>
               Search
             </button>
         </div>

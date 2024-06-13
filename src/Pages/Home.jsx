@@ -1,47 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import listData from '../data.json';
 
 const Home = () => {
   const [data, setData] = useState([]);
-
-  // const fetchData = async () => {
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://jsearch.p.rapidapi.com/search',
-  //     params: {
-  //       query: 'React Development in Indonesia',
-  //       page: '1',
-  //       num_pages: '1',
-  //       date_posted: 'all',
-  //     },
-  //     headers: {
-  //       'x-rapidapi-key': '48fc03c1e5msha01508206297ae8p177650jsna1c2ec037bb4',
-  //       'x-rapidapi-host': 'jsearch.p.rapidapi.com',
-  //     },
-  //   };
-  //   try {
-  //     const res = await axios.request(options);
-  //     if (Array.isArray(res.data.data)) {
-  //       setData(res.data.data.slice(0, 3)); // Menyimpan hanya tiga data pertama
-  //     } else {
-  //       setData([]); // Mengatur data menjadi array kosong jika tidak berbentuk array
-  //     }
-  //     console.log('Data : ', res.data.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-  useEffect(() => {
-    setData(listData.data)
-  })
-
   const navigate = useNavigate();
+
+  const fetchJobData = async () => {
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://jsearch.p.rapidapi.com/search',
+    //   params: {
+    //     query: 'Python developer in Texas, USA',
+    //     page: '1',
+    //     num_pages: '1',
+    //     date_posted: 'all'
+    //   },
+    //   headers: {
+    //     'x-rapidapi-key': '922eb15679msh93596c8921e7d4bp1986c8jsn2740408908a5',
+    //     'x-rapidapi-host': 'jsearch.p.rapidapi.com'
+    //   }
+    // };
+  
+    // try {
+    //   const response = await axios.request(options);
+    //   console.log(response.data);
+    //   setData(response.data.data); 
+    // } catch (error) {
+    //   console.error(error);
+    // }
+  };
+
+  useEffect(() => {
+    fetchJobData();
+  }, []); 
 
   const truncateText = (text, length) => {
     return text.length > length ? text.substring(0, length) + '...' : text;
@@ -77,7 +69,7 @@ const Home = () => {
       <div className="flex p-[2rem] mb-4 ">
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.length > 0 ? (
-            data.map((job, index) => (
+            data.slice(0, 3).map((job, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-lg hover:shadow-3xl transition duration-300 transform hover:-translate-y-1"
