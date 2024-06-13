@@ -21,7 +21,11 @@ const Layout = () => {
 
 const App = () => {
   return (
+ registerNlogin
     <div className='w-[100%] m-auto bg-blue'>
+
+    <div className='w-[100%] m-auto bg-blue'>
+ main
       <RouterProvider router={route}/>
     </div>
   )
@@ -43,7 +47,7 @@ const route = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />
-      },
+      }
     ]
   },
   {
