@@ -12,7 +12,7 @@ const Layout = () => {
   return(
     <>
     <NavBar />
-    <Home />
+    <Outlet />
     <Footer/>
     </>
     
@@ -21,7 +21,7 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <div className='m-auto bg-white'>
+    <div className='w-[95%] m-auto bg-white'>
       <RouterProvider router={route}/>
     </div>
   )
@@ -31,10 +31,20 @@ const route = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-  },
-  {
-    path: "/jobs",
-    element: <Jobs />
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/jobs/:id",
+        element: <JobSingle />
+      },
+      {
+        path: "/jobs",
+        element: <Jobs />
+      }
+    ]
   },
   {
     path: "/register",
