@@ -53,7 +53,8 @@ const Home = () => {
         <h1 className="text-4xl font-bold text-teal-700">
           Raih Pekerjaan <br />
           Untuk Karir <br />
-          Yang Bermakna Bagimu!
+          Yang Bermakna <br />
+          Bagimu!
         </h1>
         <p className="mt-4 text-gray-600">
           Temukan karir impianmu dengan mudah, hanya di JobSeeker!

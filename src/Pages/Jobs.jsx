@@ -42,6 +42,10 @@ const Jobs = () => {
   //   console.log("Query changed: ", query);
   // }, [query]);
 
+  useEffect(() => {
+    setData(listData.data.filter(job => job.job_title.toLowerCase().includes(query.toLowerCase())));
+  }, [query]);
+  
     useEffect(()=> {
       setData(listData.data);
       console.log(data);
