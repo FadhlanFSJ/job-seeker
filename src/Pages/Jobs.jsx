@@ -69,7 +69,7 @@ const Jobs = () => {
   
   return (
     <>
-      <div className="pt-40">
+      <div className="pt-10">
         <Search onSearch={handleSearch} />
       </div>
       <div className="flex p-[2rem] mb-4">

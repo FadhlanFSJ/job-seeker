@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Jobs from './Pages/Jobs';
 import JobSingle from './Pages/JobSingle';
 import Login from './Pages/Login';
+import FavJobs from './Pages/FavJobs';
 import Register from './Pages/Register';
 
 const Layout = () => {
@@ -30,6 +31,10 @@ const route = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/favjobs",
+        element: <FavJobs />,
       },
       {
         path: "/jobs/:id",

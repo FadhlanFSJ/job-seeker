@@ -48,7 +48,7 @@ const Home = () => {
   };
 
   return (
-    <main className="flex items-center justify-center flex-wrap mt-20 pt-20">
+    <main className="flex items-center justify-center flex-wrap mt-20 pt-40">
       <div className="text-center md:text-left md:w-1/2 px-20">
         <h1 className="text-6xl font-bold text-teal-700">
           Raih Pekerjaan <br />
