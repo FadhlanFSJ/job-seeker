@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const Search = ({ onSearch }) => {
-
   const [query, setQuery] = useState('');
-
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -14,7 +12,12 @@ const Search = ({ onSearch }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSearch(query);
-  }
+  };
+
+  const handleClear = () => {
+    setQuery(''); // Mengosongkan input
+    onSearch(''); // Memanggil pencarian dengan string kosong untuk mereset pencarian
+  };
 
   return (
     <div className='searchDiv grid gap-10 bg-greyIsh rounded-[10px] p-[3rem]'>
@@ -28,6 +31,11 @@ const Search = ({ onSearch }) => {
               placeholder='Search...'
               value={query}
               onChange={handleInputChange}
+            />
+            {query && ( // Menampilkan ikon X hanya jika ada teks di input
+              <IoIosCloseCircleOutline 
+                className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' 
+                onClick={handleClear} // Menambahkan onClick handler untuk mengosongkan input
               />
               <IoIosCloseCircleOutline className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' />
             </div>
@@ -37,37 +45,9 @@ const Search = ({ onSearch }) => {
             </button>
         </div>
       </form>
-      <div className='secDiv flex items-center gap-10 justify-center'>
-        <div className='singleSearch flex items-center gap-2'>
-          <label htmlFor='relevance' className='text-[#808080] font-semibold'>Sort By:</label>
-          <select name="" id="relevance" className='bg-white rounded-[3px] px-4 py-1'>
-            <option value="date">Tanggal Dibuat</option>
-            <option value="content">Konten</option>
-            <option value="name">Nama</option>
-            <option value="category">Kategori</option>
-          </select>
-        </div>
-        <div className='singleSearch flex items-center gap-2'>
-          <label htmlFor='relevance' className='text-[#808080] font-semibold'>Jangka Waktu : </label>
-          <select name="" id="relevance" className='bg-white rounded-[3px] px-4 py-1'>
-            <option value="">Part Time</option>
-            <option value="">Fulltime</option>
-            <option value="">Kontrak</option>
-            <option value="">Magang</option>
-          </select>
-        </div>
-        <div className='singleSearch flex items-center gap-2'>
-          <label htmlFor='relevance' className='text-[#808080] font-semibold'>Tipe : </label>
-          <select name="" id="relevance" className='bg-white rounded-[3px] px-4 py-1'>
-            <option value="">Jarak Jauh</option>
-            <option value="">Di Kantor</option>
-            <option value="">Gabungan</option>
-          </select>
-        </div>
-        <span className='text-[#a1a1a1] cursor-pointer' >Clear All</span>
-      </div>
+      {/* Add other elements as needed */}
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

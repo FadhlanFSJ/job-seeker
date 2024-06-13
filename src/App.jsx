@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Jobs from './Pages/Jobs';
 import JobSingle from './Pages/JobSingle';
 import Login from './Pages/Login';
+import FavJobs from './Pages/FavJobs';
 import Register from './Pages/Register';
 
 const Layout = () => {
@@ -17,6 +18,7 @@ const Layout = () => {
     </>
   );
 };
+
 
 const App = () => {
   return (
@@ -40,19 +42,31 @@ const route = createBrowserRouter([
         element: <Jobs />,
       },
       {
+        path: "/favjobs",
+        element: <FavJobs />,
+      },
+      {
         path: "/jobs/:id",
         element: <JobSingle />,
       },
-    ],
+    ]                    
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
   },
 ]);
+
+const App = () => {
+  return (
+    <div className='w-[100%] m-auto bg-blue'>
+      <RouterProvider router={route} />
+    </div>
+  );
+};
 
 export default App;
