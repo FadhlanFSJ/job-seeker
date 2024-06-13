@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import './style.css'; // Ubah sesuai dengan nama file CSS Anda
 
 const NavBar = () => {
 
@@ -12,9 +13,13 @@ const NavBar = () => {
     }
   };
 
+  const navigateToHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className='navBar flex justify-between items-center p-[3rem]'>
-      <div className="logoDiv">
+      <div className="logoDiv" onClick={navigateToHome} style={{ cursor: 'pointer' }}>
         <h1 className="logo text-[25px] text-[#2B8D93]"><strong>Job</strong>Seeker</h1>
       </div>
       <div className="menu flex gap-8">

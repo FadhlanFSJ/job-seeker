@@ -1,0 +1,14 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000; /* Sesuaikan dengan kebutuhan Anda, untuk menentukan urutan tumpukan elemen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan bayangan untuk efek visual */
+  }
+  
+  .logoDiv {
+    padding: 0rem 0rem; /* Sesuaikan padding sesuai dengan kebutuhan desain Anda */
+  }
+  
