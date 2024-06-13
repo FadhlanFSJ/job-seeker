@@ -34,8 +34,6 @@ const Home = () => {
   useEffect(() => {
     setData(listData.data.slice(0,3))
   })
-
-  const navigate = useNavigate();
   const truncateText = (text, length) => {
     return text.length > length ? text.substring(0, length) + '...' : text;
   };
