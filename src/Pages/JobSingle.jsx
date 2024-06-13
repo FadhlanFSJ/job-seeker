@@ -33,60 +33,37 @@ const JobSingle = () => {
   }
 
   return (
-    <div className="element">
-      <div className="div">
-        <div className="group">
-          <div className="overlap-group">
-            <div className="text-wrapper">Job Description</div>
-            <p className="p">
-              {job.job_description}
-            </p>
+    <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <div className="max-w-3xl bg-white shadow-md rounded-lg overflow-hidden w-full">
+        <div className="p-6">
+          <h2 className="text-2xl font-bold text-gray-800">{job.job_title}</h2>
+          <div className="mt-4 flex items-center">
+            <div className="text-sm font-semibold text-gray-600">Nama Perusahaan:</div>
+            <div className="ml-2 text-sm text-gray-600">{job.employer_name}</div>
+          </div>
+          <div className="mt-2 flex items-center">
+            <div className="text-sm font-semibold text-gray-600">Spesialisasi:</div>
+            <div className="ml-2 text-sm text-gray-600">{job.job_specialization}</div>
+          </div>
+          <div className="mt-2 flex items-center">
+            <div className="text-sm font-semibold text-gray-600">Level Jabatan:</div>
+            <div className="ml-2 text-sm text-gray-600">{job.job_level}</div>
+          </div>
+          <div className="mt-2 flex items-center">
+            <div className="text-sm font-semibold text-gray-600">Lokasi:</div>
+            <div className="ml-2 text-sm text-gray-600">{job.job_location}</div>
+          </div>
+          <div className="mt-2 flex items-center">
+            <div className="text-sm font-semibold text-gray-600">Bisnis Utama:</div>
+            <div className="ml-2 text-sm text-gray-600">{job.job_industry}</div>
           </div>
         </div>
-        <div className="overlap-wrapper">
-          <div className="overlap">
-            <div className="text-wrapper-2">{job.job_title}</div>
-            <div className="text-wrapper-3">Nama Perusahaan</div>
-            <div className="text-wrapper-4">{job.employer_name}</div>
-            <div className="text-wrapper-5">Spesialisasi</div>
-            <div className="text-wrapper-6">{job.job_specialization}</div>
-            <div className="text-wrapper-7">Level Jabatan</div>
-            <div className="text-wrapper-8">{job.job_level}</div>
-            <div className="text-wrapper-9">Company Size</div>
-            <div className="element-karyawan">&lt; 150 Karyawan</div>
-            <div className="text-wrapper-10">Head Office</div>
-            <div className="DKI-jakarta">{job.job_location}</div>
-            <div className="text-wrapper-11">Bisnis Utama</div>
-            <div className="text-wrapper-12">Jasa/Pelayanan</div>
-            <div className="overlap-group-wrapper">
-              <div className="div-wrapper">
-                <div className="text-wrapper-13">Full Time</div>
-              </div>
-            </div>
-            <div className="group-2">
-              <div className="overlap-2">
-                <div className="text-wrapper-14">Lamar Lowongan</div>
-              </div>
-            </div>
-          </div>
+        <div className="px-6 py-4 bg-gray-200">
+          <div className="text-lg font-semibold text-gray-800 mb-2">Job Description</div>
+          <p className="text-gray-700">{job.job_description}</p>
         </div>
-        <div className="group-3">
-          <div className="overlap-3">
-            <div className="text-wrapper-15">Job Requirements</div>
-            <div className="group-4">
-              <div className="overlap-group-2">
-                <div className="text-wrapper-16">Simpan</div>
-              </div>
-            </div>
-            <div className="group-5">
-              <div className="overlap-4">
-                <div className="text-wrapper-17">Bagikan</div>
-              </div>
-            </div>
-            <p className="text-wrapper-18">
-              {job.job_requirements}
-            </p>
-          </div>
+        <div className="px-6 py-4 bg-gray-100 border-t border-gray-200 flex justify-end">
+          <button className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Lamar Lowongan</button>
         </div>
       </div>
     </div>
