@@ -38,7 +38,7 @@ const Home = () => {
   //   fetchData();
   // }, []);
   useEffect(() => {
-    setData(listData.data)
+    setData(listData.data.slice(0,3))
   })
 
   const navigate = useNavigate();
