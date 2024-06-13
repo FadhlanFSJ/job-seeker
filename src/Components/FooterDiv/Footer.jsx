@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="logoDiv">
           <h1 className="logo text-[25px] text-white"><strong>Job</strong>Seeker</h1>
         </div>
-        <p className='text-white pb-[13px] opacity-70 mt-6 max-w-[350px]'>
+        <p className='text-white pb-[13px] opacity-70 mt-6 max-w-[350px] text-justify'>
         Temukan pekerjaan impian Anda bersama kami dan jadikan karier Anda lebih gemilang. <br />
         Kami berkomitmen untuk menyediakan berbagai peluang kerja dari perusahaan terkemuka, membantu Anda dalam setiap langkah pencarian kerja.        </p>
       </div>
