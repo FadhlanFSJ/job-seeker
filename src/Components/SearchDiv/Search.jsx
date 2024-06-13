@@ -2,7 +2,20 @@ import React, { useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-const Search = () => {
+const Search = ({ onSearch }) => {
+
+  const [query, setQuery] = useState('');
+
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSearch(query);
+  }
+
   return (
     <div className='searchDiv grid gap-10 bg-greyIsh rounded-[10px] p-[3rem] '>
       <form action="">
@@ -19,6 +32,24 @@ const Search = () => {
           <button className='bg-[#2B8D93] h-full p-2 px-4 rounded-[10px] text-white text-sm cursor-pointer hover:bg-white-300'>
             Search
           </button>
+    <div className='searchDiv grid gap-10 bg-greyIsh rounded-[10px] p-[3rem]'>
+      <form>
+        <div className='firstDiv flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 shadow-lg shadow-greyIsh-700'>
+            <div className='flex gap-2 items-center w-full'>
+              <FaSearch className='text-[25px] icon'/>
+              <input 
+              type="text" 
+              className='bg-transparant text-blue-500 focus:outline-none w-[100%]' 
+              placeholder='Search...'
+              value={query}
+              onChange={handleInputChange}
+              />
+              <IoIosCloseCircleOutline className='text-[30px] text-[#a5a6a6] hover:text-textColor icon' />
+            </div>
+            <button onClick={handleSubmit} type="submit" className='bg-blueColor h-full p-5 px-10 rounded-[10px] text-white 
+            cursor-pointer hover:bg-blue-300'>
+              Search
+            </button>
         </div>
       </form>
       <div className='secDiv flex items-center gap-10 justify-center text-sm'>
