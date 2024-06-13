@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <div className='navBar flex justify-between items-center p-[3rem]'>
       <div className="logoDiv">
-        <h1 className="logo text-[25px] text-[#2B8D93]"><strong>Job</strong>Seeker</h1>
+        <h1 className="logo text-[25px] text-[#2B8D93]" onClick={() => navigate('/')}><strong>Job</strong>Seeker</h1>
       </div>
       <div className="menu flex gap-8">
         <li className="menuList text-[#6f#6f#f] hover:text-[#2B8D93]" onClick={scrollToFooter}>About</li>
