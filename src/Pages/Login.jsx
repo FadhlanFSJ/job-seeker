@@ -33,14 +33,15 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen" style={{ backgroundColor: '#87ceeb' }}>
-      <form className="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+    <div className="flex justify-center items-center h-screen" style={{ backgroundColor: '#2B8D93' }}>
+    <form className="w-full max-w-md bg-white shadow-md rounded-xl px-10 pt-16 pb-20 mb-9 min-h-[450px]" onSubmit={handleSubmit}>
+      <h2 className="text-2xl font-bold text-center text-gray-700 mb-10">Login</h2>
         <div className="mb-4 relative">
           <FaUser className="absolute left-1 top-2 mt-15 ml-3 text-gray-500" />
           <label className="block text-gray-700 text-sm font-bold mb-2 pl-8" htmlFor="username">
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-8"
+            className="shadow appearance-none border rounded w-full py-2 px-3 mb-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-8"
             id="username"
             type="text"
             placeholder="    Username"
@@ -55,7 +56,7 @@ const Login = () => {
           <label className="block text-gray-700 text-sm font-bold mb-2 pl-8" htmlFor="password">
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-8"
+            className="shadow appearance-none border rounded w-full py-2 px-3 mb-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-8"
             id="password"
             type="password"
             placeholder="   Password"
@@ -67,10 +68,11 @@ const Login = () => {
         </div>
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="text-white font-bold py-2 px-4 mb-10 rounded focus:outline-none focus:shadow-outline"
+            style={{ backgroundColor: '#2B8D93' }}
             type="submit"
           >
-            Login
+            Register
           </button>
         </div>
       </form>
