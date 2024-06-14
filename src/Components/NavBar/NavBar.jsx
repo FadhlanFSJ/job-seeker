@@ -31,6 +31,7 @@ const NavBar = () => {
           <li className="cursor-pointer hover:text-teal-400" onClick={() => navigate('/favjobs')}>Favorites</li>
           <li className="cursor-pointer hover:text-teal-400" onClick={() => navigate('/register')}>Register</li>
           <li className="cursor-pointer hover:text-teal-400" onClick={() => navigate('/login')}>Login</li>
+          <li className="cursor-pointer hover:text-teal-400" onClick ={() => alert ('Berhasil Logout') }>Logout</li>
         </ul>
       </div>
     </div>
